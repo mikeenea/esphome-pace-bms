@@ -1,0 +1,97 @@
+substitutions:
+  name: sok1-bms
+  device_description: "Monitor and control a SOK 100Ah Rack Mount Battery via RS485 (Modbus)"
+  tx_pin: GPIO6   # M5stack Atom S3 + Atomic RS485 base = GPIO6 | Isolated RS485 Grove module = GPIO2
+  rx_pin: GPIO5   # M5stack Atom S3 + Atomic RS485 base = GPIO5 | Isolated RS485 Grove module = GPIO1
+  bank0: pack1 # Address 0x01
+  bank1: pack2 # Address 0x02
+  bank2: pack3 # Address 0x03
+  bank3: pack4 # Address 0x04
+  bank4: pack5 # Address 0x05
+  bank5: pack6 # Address 0x06
+  bank6: pack7 # Address 0x07
+  bank7: pack8 # Address 0x08
+  bank8: pack9 # Address 0x09
+  bank9: pack10 # Address 0x0A
+  bank10: pack11 # Address 0x0B
+  bank11: pack12 # Address 0x0C
+  bank12: pack13 # Address 0x0D
+  bank13: pack14 # Address 0x0E
+  bank14: pack15 # Address 0x0F
+
+esphome:
+  name: ${name}
+  comment: ${device_description}
+  min_version: 2024.6.0
+  project:
+    name: "syssi.esphome-pace-bms"
+    version: 2.0.0
+
+esp32:
+  board: esp32-s3-devkitc-1
+  framework:
+    type: esp-idf
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  manual_ip:
+    # Set this to the IP of the ESP
+    static_ip: 192.168.0.98
+    # Set this to the IP address of the router. Often ends with .1
+    gateway: 192.168.0.1
+    # The subnet of the network. 255.255.255.0 works for most home networks.
+    subnet: 255.255.255.0
+#    dns1:192.168.0.1
+ota:
+  platform: esphome
+
+logger:
+  level: VERBOSE
+
+api:
+
+uart:
+  - id: uart_0
+    baud_rate: 9600
+    tx_pin: ${tx_pin}
+    rx_pin: ${rx_pin}
+    debug:
+      direction: BOTH
+      dummy_receiver: false
+modbus:
+  - id: modbus0
+    uart_id: uart_0
+    send_wait_time: 200ms
+
+# Include other configuration files
+
+modbus_controller: !include
+  file: modbus1.yaml
+
+#include packages
+packages:
+
+ bank12: !include
+   file: pack.yaml
+   vars:
+     modbus_controller_id: bms12
+     pack: bank12
+     friendly_name: ${name}
+
+ bank13: !include
+   file: pack.yaml
+   vars:
+     modbus_controller_id: bms13
+     pack: bank13
+     friendly_name: ${name}
+
+ bank14: !include
+   file: pack.yaml
+   vars:
+     modbus_controller_id: bms14
+     pack: bank14
+     friendly_name: ${name}
+
+
+

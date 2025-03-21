@@ -1,0 +1,105 @@
+#modbus_controller:
+  - id: bms0
+    # Slave address 0x01
+    address: 0x01
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+  - id: bms1
+    # Slave address 0x02
+    address: 0x02
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+  - id: bms2
+    # Slave address 0x03
+    address: 0x03
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+  - id: bms3
+    # Slave address 0x04
+    address: 0x04
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+  - id: bms4
+    # Slave address 0x05
+    address: 0x05
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+  - id: bms5
+    # Slave address 0x06
+    address: 0x06
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+  - id: bms6
+    # Slave address 0x07
+    address: 0x07
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+  - id: bms7
+    # Slave address 0x08
+    address: 0x08
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+  - id: bms8
+    # Slave address 0x09
+    address: 0x09
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+  - id: bms9
+    # Slave address 0x0A
+    address: 0x0A
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+  - id: bms10
+    # Slave address 0x0B
+    address: 0x0B
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+  - id: bms11
+    # Slave address 0x0C
+    address: 0x0C
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+#  - id: bms12
+#    # Slave address 0x0D
+#    address: 0x0D
+#    modbus_id: modbus0
+#    command_throttle: 200ms
+#    update_interval: 10s
+
+#  - id: bms13
+#    # Slave address 0x0E
+#    address: 0x0E
+#    modbus_id: modbus0
+#    command_throttle: 200ms
+#    update_interval: 10s
+
+#  - id: bms14
+#    # Slave address 0x0F
+#    address: 0x0F
+#    modbus_id: modbus0
+#    command_throttle: 200ms
+#    update_interval: 10s

@@ -1,0 +1,21 @@
+#modbus_controller:
+  - id: bms12
+    # Slave address 0x0D
+    address: 0x0D
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+  - id: bms13
+    # Slave address 0x0E
+    address: 0x0E
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
+
+  - id: bms14
+    # Slave address 0x0F
+    address: 0x0F
+    modbus_id: modbus0
+    command_throttle: 200ms
+    update_interval: 10s
